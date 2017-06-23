@@ -176,7 +176,9 @@ public class AspectUtils {
 									throw new RuntimeException(e);
 								}
 								methodMapping.put(method, aspect);
-								aspects.add(aspect);
+								if (!aspects.contains(aspect)) {
+									aspects.add(aspect);
+								}
 								overriddenMethods.add(method);
 							}
 						}
